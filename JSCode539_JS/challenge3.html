@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 3</title>
+    
+  <nav>
+      <a href= "challenge1.html"> Challenge 1 </a> &nbsp;
+      <a href= "challenge2.html"> Challenge 2 </a> &nbsp;
+      <a href= "challenge3.html"> Challenge 3 </a> &nbsp;
+      <a href= "challenge4.html"> Challenge 4 </a> &nbsp;
+      <a href= "challenge5.html"> Challenge 5 </a> &nbsp;
+  </nav>
+  <br/> 
+
+    <script type="text/javascript">
+    function checkForm() {
+      var optStraw = document.getElementById("optstraw");
+      var optBlue = document.getElementById("optblue");
+
+      if (optStraw.checked == false && optBlue.checked == false) 
+      {
+        window.alert("You must choose your favorite berry");
+        return false;
+      }
+      else {
+        window.location.href = "http://www.cnn.com/";
+        return true;
+      }
+    }
+    
+    </script>
+</head>
+<body>
+	<form action="http://www.cnn.com/"= onsubmit="return checkForm()">
+  <fieldset>
+    <legend>Radio buttons and Check Boxes</legend>
+    <p>
+      What's your favorite berry?: 
+      <label>
+        <input type="radio" value="male" name="favfruit" id="optstraw">
+        Strawberries
+      </label>
+      <label>
+        <input type="radio" value="female" name="favfruit" id="optblue">
+        Blueberries
+      </label>
+    </p>
+  </fieldset>
+
+  <input type="submit" value="Check it out!">
+</form>
+</body>
+</html>

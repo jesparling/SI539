@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 4</title>
+
+  <nav>
+      <a href= "challenge1.html"> Challenge 1 </a> &nbsp;
+      <a href= "challenge2.html"> Challenge 2 </a> &nbsp;
+      <a href= "challenge3.html"> Challenge 3 </a> &nbsp;
+      <a href= "challenge4.html"> Challenge 4 </a> &nbsp;
+      <a href= "challenge5.html"> Challenge 5 </a> &nbsp;
+  </nav>
+  <br/> 
+
+    <style>
+    .errormsg {
+      color: red;
+      font-style: italic;
+      display: none;
+    }   
+    </style>
+    
+    <script type="text/javascript">
+
+    function checkForm() {
+      var n = document.getElementById("fullname").value;
+      if (n == "") {
+          document.getElementById("nameerrormsg").style.display = "inline";
+          var validName = false; 
+      }
+      else {
+          document.getElementById("nameerrormsg").style.display = "none";
+          var validName = true;
+      } 
+
+      var a = document.getElementById("streetaddr").value;
+      if (a == "") {
+          document.getElementById("addrerrormsg").style.display = "inline";
+          var validAddr = false; 
+      }
+      else {
+          document.getElementById("addrerrormsg").style.display = "none";
+          var validAddr = true;
+      }
+
+      if (validName == false || validAddr == false) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    } 
+
+    </script>
+</head>
+<body>
+	<form action="http://www.cnn.com/" onsubmit="return checkForm();">
+  <fieldset>
+    <legend>Personal details</legend>
+    <p>
+      <label>
+        Full name:
+        <input type="text" name="fullname" id="fullname">
+      </label>
+    </p>
+    <p class="errormsg" id="nameerrormsg" onchange="checkName()">Please enter your name above</p>
+    <p>
+      <label>
+        Street Address:
+        <input type="text" name="streetaddr" id="streetaddr">
+      </label>
+    </p>
+    <p class="errormsg" id="addrerrormsg" onchange="checkAddr()">Please enter your street address</p>
+
+  </fieldset>
+  <input type="submit" value="Submit it!"> 
+</form>
+</body>
+</html>
